@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body{
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class=" display-4 text-center">Weight Convereter</h1>
+            </div>
+            <form >
+                <div class="form-group mb-3">
+                <input id="lbsinput"  class="form-control form-control-lg"  type ="number"  placeholder="Enter pounds">
+                </div>
+            </form>
+            <div class="output mb-3">
+                <div class="bg bg-primary mb-3">
+                    <div class="card-block">
+                        <h3>Grams</h3>
+                        <div id="gramsop"></div>
+                    </div>
+                </div>
+                 <div class="bg-success mb-3">
+                    <div class="card-block">
+                        <h3>Kilograms</h3>
+                        <div id="kilogramsop"></div>
+                    </div>
+                </div>
+                 <div class="bg bg-danger md-3">
+                    <div class="card-block">
+                        <h3>Ounces</h3>
+                        <div id="ouncesop"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <script>
+        
+       document.getElementById('lbsinput').addEventListener('input',function(e) {
+
+        let lbs=e.target.value;
+      
+        document.getElementById('gramsop').innerHTML=(lbs/0.0022046).toFixed(3);
+        document.getElementById("kilogramsop").innerHTML=(lbs/2.2406).toFixed(3);
+        document.getElementById("ouncesop").innerHTML=lbs*16;
+        
+       });
+
+    </script>
+</body>
+</html>
